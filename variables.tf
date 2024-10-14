@@ -16,7 +16,7 @@ variable "virtual_network_name" {
 variable "virtual_network_resource_group_name" {
   description = "The name of the resource group of the virtual network in which to create the subnet."
   type        = string
-  default = ""
+  default     = ""
 }
 
 variable "address_prefixes" {
@@ -26,8 +26,8 @@ variable "address_prefixes" {
 
 variable "delegations" {
   description = "The list of delegations for the subnet."
-  type        = list(object({
-    name               = string
+  type = list(object({
+    name = string
     service_delegation = object({
       name    = string
       actions = list(string)
@@ -38,7 +38,7 @@ variable "delegations" {
 variable "default_outbound_access_enabled" {
   description = "The default action for outbound traffic to the internet."
   type        = bool
-  default     = true 
+  default     = true
 }
 
 variable "private_endpoint_network_policies" {
@@ -56,17 +56,17 @@ variable "private_link_service_network_policies_enabled" {
 variable "service_endpoints" {
   description = "The list of service endpoints for the subnet."
   type        = list(string)
-  default = [ ]
+  default     = []
 }
 
 variable "service_endpoint_policy_ids" {
   description = "The list of service endpoint policy IDs for the subnet."
   type        = list(string)
-  default = [ ]
+  default     = []
 }
 
 variable "route_table" {
-    description = "The route table to associate with the subnet."
-    type        = string
-    default     = ""
+  description = "The route table to associate with the subnet."
+  type        = string
+  default     = ""
 }
