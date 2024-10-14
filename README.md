@@ -26,7 +26,11 @@ No modules.
 The following resources are used by this module:
 
 - [azurerm_subnet.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) (resource)
+- [azurerm_subnet_nat_gateway_association.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_nat_gateway_association) (resource)
+- [azurerm_subnet_network_security_group_association.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_network_security_group_association) (resource)
 - [azurerm_subnet_route_table_association.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_route_table_association) (resource)
+- [azurerm_nat_gateway.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/nat_gateway) (data source)
+- [azurerm_network_security_group.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/network_security_group) (data source)
 - [azurerm_resource_group.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) (data source)
 - [azurerm_route_table.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/route_table) (data source)
 - [azurerm_virtual_network.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network) (data source)
@@ -104,6 +108,38 @@ object({
 
 Default: `{}`
 
+### <a name="input_nat_gateway"></a> [nat\_gateway](#input\_nat\_gateway)
+
+Description: The NAT gateway to associate with the subnet.
+
+Type: `string`
+
+Default: `""`
+
+### <a name="input_nat_gateway_resource_group_name"></a> [nat\_gateway\_resource\_group\_name](#input\_nat\_gateway\_resource\_group\_name)
+
+Description: The name of the resource group of the NAT gateway to associate with the subnet.
+
+Type: `string`
+
+Default: `""`
+
+### <a name="input_network_security_group"></a> [network\_security\_group](#input\_network\_security\_group)
+
+Description: The network security group to associate with the subnet.
+
+Type: `string`
+
+Default: `""`
+
+### <a name="input_network_security_group_resource_group_name"></a> [network\_security\_group\_resource\_group\_name](#input\_network\_security\_group\_resource\_group\_name)
+
+Description: The name of the resource group of the network security group to associate with the subnet.
+
+Type: `string`
+
+Default: `""`
+
 ### <a name="input_private_endpoint_network_policies"></a> [private\_endpoint\_network\_policies](#input\_private\_endpoint\_network\_policies)
 
 Description: The network policies for the private endpoint.
@@ -123,6 +159,14 @@ Default: `true`
 ### <a name="input_route_table"></a> [route\_table](#input\_route\_table)
 
 Description: The route table to associate with the subnet.
+
+Type: `string`
+
+Default: `""`
+
+### <a name="input_route_table_resource_group_name"></a> [route\_table\_resource\_group\_name](#input\_route\_table\_resource\_group\_name)
+
+Description: The name of the resource group of the route table to associate with the subnet.
 
 Type: `string`
 

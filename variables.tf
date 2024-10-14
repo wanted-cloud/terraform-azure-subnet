@@ -70,3 +70,33 @@ variable "route_table" {
   type        = string
   default     = ""
 }
+
+variable "route_table_resource_group_name" {
+  description = "The name of the resource group of the route table to associate with the subnet."
+  type        = string
+  default     = ""
+}
+
+variable "network_security_group" {
+  description = "The network security group to associate with the subnet."
+  type        = string
+  default     = ""
+}
+
+variable "network_security_group_resource_group_name" {
+  description = "The name of the resource group of the network security group to associate with the subnet."
+  type        = string
+  default     = ""
+}
+
+variable "nat_gateway" {
+  description = "The NAT gateway to associate with the subnet."
+  type        = string
+  default     = ""
+}
+
+variable "nat_gateway_resource_group_name" {
+  description = "The name of the resource group of the NAT gateway to associate with the subnet."
+  type        = string
+  default     = ""
+}
