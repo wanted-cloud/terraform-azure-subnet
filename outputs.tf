@@ -1,1 +1,3 @@
-// This is perfect place for adding your module output data
+output "subnet" {
+  value = azurerm_subnet.this
+}

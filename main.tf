@@ -1,14 +1,14 @@
 /**
  * # wanted-cloud/terraform-azure-subnet
  *
- * Some descirption of the module.
+ * Terraform building block for provisioning an Azure Subnet and creating delegations or NAT, Route tables and Security groups assignments.
  *
  */
 resource "azurerm_subnet" "this" {
   name                 = var.name
-  resource_group_name  = azurerm_resource_group.this.name
-  virtual_network_name = azurerm_virtual_network.this.name
-  address_prefixes     = ["10.0.1.0/24"]
+  resource_group_name  = data.azurerm_resource_group.this.name
+  virtual_network_name = data.azurerm_virtual_network.this.name
+  address_prefixes     = var.address_prefixes
   service_endpoints    = var.service_endpoints
 
   default_outbound_access_enabled               = var.default_outbound_access_enabled
@@ -25,5 +25,4 @@ resource "azurerm_subnet" "this" {
       }
     }
   }
-
 }
