@@ -1,5 +1,6 @@
 locals {
   definitions = {
+    tags = { ManagedBy = "Terraform" }
     validator_expressions = {
       subnet_name                                = "^.*$"
       resource_group_name                        = "^.*$"
