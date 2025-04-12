@@ -25,4 +25,23 @@ resource "azurerm_subnet" "this" {
       }
     }
   }
+
+  timeouts {
+    create = try(
+      local.metadata.resource_timeouts["azurerm_subnet"]["create"],
+      local.metadata.resource_timeouts["default"]["create"]
+    )
+    read = try(
+      local.metadata.resource_timeouts["azurerm_subnet"]["read"],
+      local.metadata.resource_timeouts["default"]["read"]
+    )
+    update = try(
+      local.metadata.resource_timeouts["azurerm_subnet"]["update"],
+      local.metadata.resource_timeouts["default"]["update"]
+    )
+    delete = try(
+      local.metadata.resource_timeouts["azurerm_subnet"]["delete"],
+      local.metadata.resource_timeouts["default"]["delete"]
+    )
+  }
 }

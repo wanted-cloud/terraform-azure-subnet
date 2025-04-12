@@ -19,13 +19,13 @@ The following requirements are needed by this module:
 
 - <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (>= 1.9)
 
-- <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) (>=4.17.0)
+- <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) (>=4.20.0)
 
 ## Providers
 
 The following providers are used by this module:
 
-- <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) (>=4.17.0)
+- <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) (>=4.20.0)
 
 ## Required Inputs
 
@@ -195,6 +195,18 @@ Default: `[]`
 
 The following outputs are exported:
 
+### <a name="output_nat_gateways"></a> [nat\_gateways](#output\_nat\_gateways)
+
+Description: n/a
+
+### <a name="output_network_security_groups"></a> [network\_security\_groups](#output\_network\_security\_groups)
+
+Description: n/a
+
+### <a name="output_route_tables"></a> [route\_tables](#output\_route\_tables)
+
+Description: n/a
+
 ### <a name="output_subnet"></a> [subnet](#output\_subnet)
 
 Description: n/a
@@ -234,10 +246,10 @@ The minimal usage for the module is as follows:
 module "example" {
     source = "../.."
 
-    name = "example"
-    resource_group_name = "example"
-    virtual_network_name = "example"
-    address_prefixes = [  ]
+    name = "example-subnet"
+    resource_group_name = "test"
+    virtual_network_name = "gl-vnet-test-001"
+    address_prefixes = [ "10.0.2.0/24" ]
 
 }
 ```
